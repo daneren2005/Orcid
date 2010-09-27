@@ -11,12 +11,6 @@
 // #include <iostream>
 // using namespace std;
 
-Input* setupInput()
-{
-	return new Input();
-}
-
-
 #ifdef WIN32
 	int WINAPI WinMain(HINSTANCE program, HINSTANCE prevProgram, LPSTR args, int nCmdShow)
 #endif
@@ -24,20 +18,19 @@ Input* setupInput()
 	int main(int argc,char** argv)
 #endif
 {
-	Application app(program);
-
-	Input* input = setupInput();
-
 	Window win(1280, 720);
 	win.start(program);
-	win.setInput(input);
+
+	Thread thisThread(&win);
+	thisThread.createContext();
 
 	Galaxy galaxy;
 	galaxy.load();
 	win.setScene(galaxy.getCamera());
+	galaxy.setInput(win.getInput());
 	galaxy.start();
-	galaxy.setInput(input);
 
+	// Set program into infinite loop until window thread is stopped
 	win.wait();
 
 	return(0);

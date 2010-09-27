@@ -35,7 +35,7 @@ void Ship::load()
 {
 	this->displayList = glGenLists(1);
 
-	glNewList(this->displayList, GL_COMPILE);
+	glNewList(this->displayList, GL_COMPILE_AND_EXECUTE);
 		glBegin(GL_TRIANGLES);
 			glColor3f(1.0f, 0.0f, 0.0f);
 			glVertex3f(0.0f, 1.0f, 0.0f);
