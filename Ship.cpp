@@ -1,13 +1,15 @@
-/* 
+/*
  * File:   Ship.cpp
  * Author: scott
- * 
+ *
  * Created on July 20, 2010, 3:50 PM
  */
 
 #include "Ship.h"
 
-#include <windows.h>
+#ifdef WIN32
+	#include <windows.h>
+#endif
 
 Ship::Ship() : BaseObject()
 {
@@ -61,7 +63,9 @@ void Ship::load()
 
 	if(!glIsList(this->displayList))
 	{
-		MessageBox(NULL, TEXT("No list"), NULL, NULL);
+		#ifdef WIN32
+			MessageBox(NULL, TEXT("No list"), NULL, NULL);
+		#endif
 	}
 }
 

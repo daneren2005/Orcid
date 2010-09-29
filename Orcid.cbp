@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Orcid" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Orcid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="../skyfire" />
+				</Compiler>
+				<Linker>
+					<Add option="-lpthread -lGLU -lGL -lglut -lSDL" />
+					<Add library="../skyfire/libSkyfire.a" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Orcid" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="../skyfire" />
+		</Compiler>
+		<Linker>
+			<Add library="../skyfire/libSkyfire.a" />
+		</Linker>
+		<Unit filename="Galaxy.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Galaxy.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Ship.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Ship.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="SolarSystem.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="SolarSystem.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Station.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Station.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="main.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="main_list.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   main.cpp
  * Author: scott
  *
@@ -8,7 +8,7 @@
 #include "skyfire.h"
 #include "Galaxy.h"
 
-// #include <iostream>
+#include <iostream>
 // using namespace std;
 
 #ifdef WIN32
@@ -19,7 +19,13 @@
 #endif
 {
 	Window win(1280, 720);
-	win.start(program);
+
+	#ifdef WIN32
+		win.start(program);
+	#endif
+	#ifdef __linux__
+		win.start();
+	#endif
 
 	Thread thisThread(&win);
 	thisThread.createContext();
@@ -32,6 +38,7 @@
 
 	// Set program into infinite loop until window thread is stopped
 	win.wait();
+	std::cout << "test" << std::endl;
 
 	return(0);
 }
