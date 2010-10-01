@@ -27,9 +27,6 @@
 		win.start();
 	#endif
 
-	Thread thisThread(&win);
-	thisThread.createContext();
-
 	Galaxy galaxy;
 	galaxy.load();
 	win.setScene(galaxy.getCamera());
@@ -38,7 +35,6 @@
 
 	// Set program into infinite loop until window thread is stopped
 	win.wait();
-	std::cout << "test" << std::endl;
 
 	return(0);
 }
