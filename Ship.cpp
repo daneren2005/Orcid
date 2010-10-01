@@ -35,37 +35,22 @@ void Ship::update(double interval)
 
 void Ship::load()
 {
-	this->displayList = glGenLists(1);
-
-	glNewList(this->displayList, GL_COMPILE_AND_EXECUTE);
-		glBegin(GL_TRIANGLES);
-			glColor3f(1.0f, 0.0f, 0.0f);
-			glVertex3f(0.0f, 1.0f, 0.0f);
-			glVertex3f(-1.0f, -1.0f, 1.0f);
-			glVertex3f(1.0f, -1.0f, 1.0f);
-
-			glColor3f(0.0f, 1.0f, 0.0f);
-			glVertex3f(0.0f, 1.0f, 0.0f);
-			glVertex3f(1.0f, -1.0f, 1.0f);
-			glVertex3f(1.0f, -1.0f, -1.0f);
-
-			glColor3f(0.0f, 0.0f, 1.0f);
-			glVertex3f(0.0f, 1.0f, 0.0f);
-			glVertex3f(1.0f, -1.0f, -1.0f);
-			glVertex3f(-1.0f, -1.0f, -1.0f);
-
-			glColor3f(1.0f, 0.0f, 1.0f);
-			glVertex3f(0.0f, 1.0f, 0.0f);
-			glVertex3f(-1.0f, -1.0f, -1.0f);
-			glVertex3f(-1.0f, -1.0f, 1.0f);
-		glEnd();
-	glEndList();
-
-	if(!glIsList(this->displayList))
-	{
-		#ifdef WIN32
-			MessageBox(NULL, TEXT("No list"), NULL, NULL);
-		#endif
-	}
+	this->shape = new Polygon();
+	this->shape->addTriangle(new Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(-1.0f, -1.0f, 1.0f),
+			Vector(1.0f, -1.0f, 1.0f),
+			Vector(1.0f, 0.0f, 0.0f)));
+	this->shape->addTriangle(new Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(1.0f, -1.0f, 1.0f),
+			Vector(1.0f, -1.0f, -1.0f),
+			Vector(0.0f, 1.0f, 0.0f)));
+	this->shape->addTriangle(new Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(1.0f, -1.0f, -1.0f),
+			Vector(-1.0f, -1.0f, -1.0f),
+			Vector(0.0f, 0.0f, 1.0f)));
+	this->shape->addTriangle(new Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(-1.0f, -1.0f, -1.0f),
+			Vector(-1.0f, -1.0f, 1.0f),
+			Vector(1.0f, 0.0f, 1.0f)));
 }
 
