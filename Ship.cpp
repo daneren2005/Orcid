@@ -30,12 +30,12 @@ Ship::~Ship()
 
 void Ship::update(double interval)
 {
-	// this->rotateByReference(interval * 360.0f, 0.0f, 0.0f);
+	this->rotateByReference(interval * 360.0f, 0.0f, 0.0f);
 }
 
 void Ship::load()
 {
-	this->shape = new Polygon();
+	this->shape = new Mesh();
 	this->shape->addTriangle(new Triangle(Vector(0.0f, 1.0f, 0.0f),
 			Vector(-1.0f, -1.0f, 1.0f),
 			Vector(1.0f, -1.0f, 1.0f),

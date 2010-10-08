@@ -13,7 +13,7 @@ SolarSystem::SolarSystem()
 	ship = new Ship(5.0f, 1.0f, -20.0f);
 	ship->load();
 	objects.push_front(ship);
-	ship = new Ship(-5.0f, -1.0f, -20.0f);
+	ship = new Ship(-5.0f, -3.0f, -20.0f);
 	ship->load();
 	objects.push_front(ship);
 	ship = new Ship(1.0f, 1.0f, 20.0f);
