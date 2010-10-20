@@ -9,6 +9,26 @@
 
 SolarSystem::SolarSystem()
 {
+	Mesh mesh(4);
+	mesh[0] = Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(-1.0f, -1.0f, 1.0f),
+			Vector(1.0f, -1.0f, 1.0f),
+			Vector(1.0f, 0.0f, 0.0f));
+	mesh[1] = Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(1.0f, -1.0f, 1.0f),
+			Vector(1.0f, -1.0f, -1.0f),
+			Vector(0.0f, 1.0f, 0.0f));
+	mesh[2] = Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(1.0f, -1.0f, -1.0f),
+			Vector(-1.0f, -1.0f, -1.0f),
+			Vector(0.0f, 0.0f, 1.0f));
+	mesh[3] = Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(-1.0f, -1.0f, -1.0f),
+			Vector(-1.0f, -1.0f, 1.0f),
+			Vector(1.0f, 0.0f, 1.0f));
+
+	modelManager.addModel(&mesh, std::string("ship"));
+
 	Ship* ship;
 	ship = new Ship(5.0f, 1.0f, -20.0f);
 	ship->load();
