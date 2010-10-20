@@ -30,13 +30,32 @@ Ship::~Ship()
 
 void Ship::update(double interval)
 {
-	this->rotateByReference(interval * 360.0f, 0.0f, 0.0f);
+	// this->rotateBy(interval * 360.0f, 0.0f, 0.0f);
+	// this->rotateBy(0.0f, interval * 360.0f, 0.0f);
+	// this->rotateBy(0.0f, 0.0f, interval * 360.0f);
 }
 
 void Ship::load()
 {
-	this->shape = new Mesh();
-	this->shape->addTriangle(new Triangle(Vector(0.0f, 1.0f, 0.0f),
+	mesh = Mesh(4);
+	mesh[0] = Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(-1.0f, -1.0f, 1.0f),
+			Vector(1.0f, -1.0f, 1.0f),
+			Vector(1.0f, 0.0f, 0.0f));
+	mesh[1] = Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(1.0f, -1.0f, 1.0f),
+			Vector(1.0f, -1.0f, -1.0f),
+			Vector(0.0f, 1.0f, 0.0f));
+	mesh[2] = Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(1.0f, -1.0f, -1.0f),
+			Vector(-1.0f, -1.0f, -1.0f),
+			Vector(0.0f, 0.0f, 1.0f));
+	mesh[3] = Triangle(Vector(0.0f, 1.0f, 0.0f),
+			Vector(-1.0f, -1.0f, -1.0f),
+			Vector(-1.0f, -1.0f, 1.0f),
+			Vector(1.0f, 0.0f, 1.0f));
+	
+	/*this->shape->addTriangle(new Triangle(Vector(0.0f, 1.0f, 0.0f),
 			Vector(-1.0f, -1.0f, 1.0f),
 			Vector(1.0f, -1.0f, 1.0f),
 			Vector(1.0f, 0.0f, 0.0f)));
@@ -51,6 +70,6 @@ void Ship::load()
 	this->shape->addTriangle(new Triangle(Vector(0.0f, 1.0f, 0.0f),
 			Vector(-1.0f, -1.0f, -1.0f),
 			Vector(-1.0f, -1.0f, 1.0f),
-			Vector(1.0f, 0.0f, 1.0f)));
+			Vector(1.0f, 0.0f, 1.0f)));*/
 }
 
