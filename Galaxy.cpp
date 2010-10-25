@@ -27,5 +27,8 @@ void Galaxy::load()
 	SolarSystem* system = new SolarSystem();
 	this->addRegion(system);
 	this->setActiveRegion(system);
+
+	BaseObject* ship = this->camera->getActiveRegion()->getFront();
+	this->camera->setActiveObject(ship);
 }
 

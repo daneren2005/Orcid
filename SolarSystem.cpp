@@ -28,18 +28,19 @@ SolarSystem::SolarSystem()
 			Vector(1.0f, 0.0f, 1.0f));
 
 	modelManager.addModel(&mesh, std::string("ship"));
-	modelManager.loadModels(std::string("ships.obj"));
+	modelManager.loadModels(std::string("data/ships.obj"));
 
 	Ship* ship;
 	ship = new Ship(5.0f, 1.0f, -20.0f);
 	ship->load();
-	objects.push_front(ship);
+	objects.push_back(ship);
 	ship = new Ship(-5.0f, -6.0f, -14.0f);
 	ship->load();
-	objects.push_front(ship);
+	objects.push_back(ship);
 	ship = new Ship(1.0f, 1.0f, 20.0f);
 	ship->load();
-	objects.push_front(ship);
+	objects.push_back(ship);
+
 	// objects.push_front(new AxisObject(-1.0f, 0.0f, 0.0f));
 }
 

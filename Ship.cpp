@@ -40,6 +40,6 @@ void Ship::update(double interval)
 
 void Ship::load()
 {
-	this->mesh = *modelManager.getModel(std::string("Ship"));
+	this->mesh = *modelManager.getModel(std::string("ship"));
 }
 
