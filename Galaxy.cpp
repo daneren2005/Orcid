@@ -29,6 +29,7 @@ void Galaxy::load()
 	this->setActiveRegion(system);
 
 	BaseObject* ship = this->camera->getActiveRegion()->getFront();
-	this->camera->setActiveObject(ship);
+	this->camera->moveByDirection(0.0f, 0.0f, -40.0f);
+	this->camera->attachTo(ship);
 }
 
