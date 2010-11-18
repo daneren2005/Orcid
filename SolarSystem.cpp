@@ -29,9 +29,10 @@ SolarSystem::SolarSystem()
 
 	modelManager.addModel(&mesh, std::string("ship"));
 	modelManager.loadModels(std::string("data/ships.obj"));
+	modelManager.loadModels(std::string("data/teapot.obj"));
 
 	Ship* ship;
-	ship = new Ship(0.0f, 0.0f, 0.0f);
+	ship = new Ship(0.0f, 0.0f, 20.0f);
 	ship->load();
 	objects.push_back(ship);
 	ship = new Ship(0.0f, -6.0f, 20.0f);
