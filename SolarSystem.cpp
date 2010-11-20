@@ -42,7 +42,7 @@ SolarSystem::SolarSystem()
 	ship->load();
 	objects.push_back(ship);
 
-	// objects.push_front(new AxisObject(-1.0f, 0.0f, 0.0f));
+	objects.push_front(new AxisObject(0.0f, 0.0f, 0.0f));
 }
 
 SolarSystem::SolarSystem(const SolarSystem& orig)
