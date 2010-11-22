@@ -30,6 +30,7 @@ SolarSystem::SolarSystem()
 	modelManager.addModel(&mesh, std::string("ship"));
 	modelManager.loadModels(std::string("data/ships.obj"));
 	modelManager.loadModels(std::string("data/teapot.obj"));
+	modelManager.loadModels(std::string("data/Daedalus.obj"));
 
 	Ship* ship;
 	ship = new Ship(0.0f, 0.0f, 20.0f);
