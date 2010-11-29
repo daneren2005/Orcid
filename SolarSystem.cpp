@@ -27,7 +27,7 @@ SolarSystem::SolarSystem()
 			Vector(-1.0f, -1.0f, 1.0f),
 			Vector(1.0f, 0.0f, 1.0f));
 
-	modelManager.addModel(&mesh, std::string("ship"));
+	// modelManager.addModel(&mesh, std::string("ship"));
 	modelManager.loadModels(std::string("data/ships.obj"));
 	modelManager.loadModels(std::string("data/teapot.obj"));
 	modelManager.loadModels(std::string("data/Daedalus.obj"));
@@ -36,9 +36,9 @@ SolarSystem::SolarSystem()
 	ship = new Ship(0.0f, 0.0f, 20.0f);
 	ship->load();
 	objects.push_back(ship);
-	ship = new Ship(0.0f, -6.0f, 20.0f);
-	ship->load();
-	objects.push_back(ship);
+	// ship = new Ship(0.0f, -6.0f, 20.0f);
+	// ship->load();
+	// objects.push_back(ship);
 	ship = new Ship(5.0f, 1.0f, -60.0f);
 	ship->load();
 	objects.push_back(ship);
