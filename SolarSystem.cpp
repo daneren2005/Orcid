@@ -9,7 +9,7 @@
 
 SolarSystem::SolarSystem()
 {
-	Mesh mesh(4);
+	Mesh mesh((unsigned long)4);
 	mesh[0] = Triangle(Vector(0.0f, 1.0f, 0.0f),
 			Vector(-1.0f, -1.0f, 1.0f),
 			Vector(1.0f, -1.0f, 1.0f),
@@ -31,6 +31,7 @@ SolarSystem::SolarSystem()
 	modelManager.loadModels(std::string("data/ships.obj"));
 	modelManager.loadModels(std::string("data/teapot.obj"));
 	modelManager.loadModels(std::string("data/Daedalus.obj"));
+	// modelManager.loadModels(std::string("data/danube.obj"));
 
 	Ship* ship;
 	ship = new Ship(0.0f, 0.0f, 20.0f);

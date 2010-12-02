@@ -41,5 +41,6 @@ void Ship::update(double interval)
 void Ship::load()
 {
 	this->model = modelManager.getModel(std::string("daedalus"));
+	// this->model = modelManager.getModel(std::string("danube.obj"));
 }
 
