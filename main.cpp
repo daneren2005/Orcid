@@ -9,7 +9,6 @@
 #include "Galaxy.h"
 
 #include <iostream>
-// using namespace std;
 
 #ifdef WIN32
 	int WINAPI WinMain(HINSTANCE program, HINSTANCE prevProgram, LPSTR args, int nCmdShow)
@@ -18,6 +17,10 @@
 	int main(int argc,char** argv)
 #endif
 {
+	String str1 = ",apple,blitz,,mtez,replace,";
+	String str2 = str1.remove(',');
+	String str3 = str1.replace(',', '.');
+
 	Window win(1280, 720);
 
 	#ifdef WIN32
