@@ -6,6 +6,8 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>Explosion.cpp</itemPath>
+    <itemPath>Explosion.h</itemPath>
     <itemPath>Galaxy.cpp</itemPath>
     <itemPath>Galaxy.h</itemPath>
     <itemPath>ReadMe.txt</itemPath>

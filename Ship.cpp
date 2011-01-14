@@ -12,17 +12,17 @@
 	#include <windows.h>
 #endif
 
-Ship::Ship() : BaseObject()
+Ship::Ship() : StaticObject()
 {
 
 }
 
-Ship::Ship(float x, float y, float z) : BaseObject(x, y, z)
+Ship::Ship(float x, float y, float z) : StaticObject(x, y, z)
 {
 	
 }
 
-Ship::Ship(const Ship& orig) : BaseObject(orig)
+Ship::Ship(const Ship& orig) : StaticObject(orig)
 {
 	
 }
@@ -33,7 +33,9 @@ Ship::~Ship()
 
 void Ship::update(double interval)
 {
-	// this->rotateBy(interval * 360.0f, 0.0f, 0.0f);
+	// this->moveByDirection(0.0f, 0.0f, interval * 1.0f);
+
+	// this->rotateBy(interval * 20.0f, 0.0f, 0.0f);
 	// this->rotateBy(0.0f, interval * 360.0f, 0.0f);
 	// this->rotateBy(0.0f, 0.0f, interval * 360.0f);
 }

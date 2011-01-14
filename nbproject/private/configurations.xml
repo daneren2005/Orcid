@@ -13,7 +13,7 @@
       </gizmo_options>
       <runprofile version="6">
         <args></args>
-        <rundir></rundir>
+        <rundir>/home/scott/orcid/.</rundir>
         <buildfirst>true</buildfirst>
         <console-type>0</console-type>
         <terminal-type>0</terminal-type>
@@ -28,7 +28,6 @@
         <array_repeat_threshold>10</array_repeat_threshold>
       </gdbdebugger>
       <gizmo_options version="3">
-        <configurationname>GizmoSimple</configurationname>
       </gizmo_options>
       <runprofile version="6">
         <args></args>
