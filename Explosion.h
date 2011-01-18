@@ -17,11 +17,12 @@ public:
 	Explosion(const Explosion& orig);
 	virtual ~Explosion();
 
-	virtual void update(double interval);
-	virtual void draw();
 	virtual void load();
 private:
-	virtual void emitParticles();
+	double runningTime;
+
+	virtual void emitParticles(double interval);
+	virtual void emitParticle(float x, float y, float z);
 };
 
 #endif	/* _EXPLOSION_H */
