@@ -22,7 +22,6 @@ private:
 	double runningTime;
 
 	virtual void emitParticles(double interval);
-	virtual void emitParticle(float x, float y, float z);
 };
 
 #endif	/* _EXPLOSION_H */

@@ -6,6 +6,7 @@
  */
 
 #include "Explosion.h"
+#include <math.h>
 
 Explosion::Explosion()
 {
@@ -28,31 +29,15 @@ void Explosion::load()
 void Explosion::emitParticles(double interval)
 {
 	runningTime += interval;
-	if(runningTime <= 1.0)
+	if(runningTime <= 0.4)
 	{
-		this->emitParticle(1.0f, 0.0f, 0.0f);
-		this->emitParticle(-1.0f, 0.0f, 0.0f);
-		this->emitParticle(0.0f, .6f, 0.0f);
-		this->emitParticle(0.0f, -.6f, 0.0f);
-
-		this->emitParticle(1.0f, .6f, 0.0f);
-		this->emitParticle(-1.0f, .6f, 0.0f);
-		this->emitParticle(1.0f, -.6f, 0.0f);
-		this->emitParticle(-1.0f, -.6f, 0.0f);
+		float r = 2.0f;
+		for(float x = -r; x <= r; x += .01f)
+		{
+			float y = sqrt(r * r - x * x);
+			this->emitParticle(Vector(0.0f, 1.0f, -10.0f), Vector(x, y, 0), Vector(), .6f);
+			this->emitParticle(Vector(0.0f, 1.0f, -10.0f), Vector(x, -y, 0), Vector(), .6f);
+		}
 	}
-}
-
-void Explosion::emitParticle(float x, float y, float z)
-{
-	Particle p;
-	p.position[0] = 5.0f;
-	p.position[1] = 1.0f;
-	p.position[2] = -10.0f;
-	p.speed[0] = x;
-	p.speed[1] = y;
-	p.speed[2] = z;
-	p.life = .6f;
-	p.fade = 0.1f;
-	particles.insert(p);
 }
 
