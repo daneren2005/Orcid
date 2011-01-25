@@ -37,7 +37,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Galaxy.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/Explosion.o \
-	${OBJECTDIR}/Ship.o
+	${OBJECTDIR}/Ship.o \
+	${OBJECTDIR}/ShipCamera.o
 
 # C Compiler Flags
 CFLAGS=
@@ -99,6 +100,11 @@ ${OBJECTDIR}/Ship.o: nbproject/Makefile-${CND_CONF}.mk Ship.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -I../skyfire -MMD -MP -MF $@.d -o ${OBJECTDIR}/Ship.o Ship.cpp
+
+${OBJECTDIR}/ShipCamera.o: nbproject/Makefile-${CND_CONF}.mk ShipCamera.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../skyfire -MMD -MP -MF $@.d -o ${OBJECTDIR}/ShipCamera.o ShipCamera.cpp
 
 # Subprojects
 .build-subprojects:

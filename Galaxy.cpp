@@ -6,10 +6,11 @@
  */
 
 #include "Galaxy.h"
+#include "ShipCamera.h"
 
 Galaxy::Galaxy() : Universe()
 {
-	
+	this->camera = new ShipCamera();
 }
 
 Galaxy::Galaxy(const Galaxy& orig)
@@ -27,9 +28,5 @@ void Galaxy::load()
 	SolarSystem* system = new SolarSystem();
 	this->addRegion(system);
 	this->setActiveRegion(system);
-
-	// BaseObject* ship = this->camera->getActiveRegion()->getFront();
-	// this->camera->moveByDirection(0.0f, 0.0f, -40.0f);
-	// this->camera->attachTo(ship);
 }
 

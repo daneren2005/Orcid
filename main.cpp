@@ -7,6 +7,7 @@
 
 #include "skyfire.h"
 #include "Galaxy.h"
+#include "ShipCamera.h"
 
 #include <iostream>
 
@@ -39,8 +40,13 @@
 
 	Galaxy galaxy;
 	galaxy.load();
-	win.setScene(galaxy.getCamera());
-	galaxy.setInput(win.getInput());
+
+	ShipCamera* camera = (ShipCamera*)galaxy.getCamera();
+	Input* input = win.getInput();
+	camera->setEventHandlers(input);
+
+	win.setScene(camera);
+	galaxy.setInput(input);
 	galaxy.start();
 
 	// Set program into infinite loop until window thread is stopped
