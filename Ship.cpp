@@ -35,7 +35,7 @@ void Ship::update(double interval)
 {
 	// this->moveByDirection(0.0f, 0.0f, interval * 1.0f);
 
-	// this->rotateBy(interval * 20.0f, 0.0f, 0.0f);
+	this->rotateBy(interval * 20.0f, 0.0f, 0.0f);
 	// this->rotateBy(0.0f, interval * 360.0f, 0.0f);
 	// this->rotateBy(0.0f, 0.0f, interval * 360.0f);
 }
