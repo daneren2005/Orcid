@@ -13,7 +13,7 @@
 class Explosion : public ParticleEmitter
 {
 public:
-	Explosion();
+	Explosion(float x, float y, float z);
 	Explosion(const Explosion& orig);
 	virtual ~Explosion();
 

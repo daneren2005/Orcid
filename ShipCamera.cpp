@@ -6,6 +6,7 @@
  */
 
 #include "ShipCamera.h"
+#include "Explosion.h"
 
 ShipCamera::ShipCamera() : Camera()
 {
@@ -35,7 +36,7 @@ void ShipCamera::setEventHandlers(Input* input)
 	input->setKeyDownEventHandler(KEY_S, ShipCamera::rotateDown, this);
 
 	input->setMousePressEventHandler(BUTTON_LEFT, ShipCamera::mouseClick, this);
-	input->setMouseDownEventHandler(BUTTON_LEFT, ShipCamera::mouseDown, this);
+	// input->setMouseDownEventHandler(BUTTON_LEFT, ShipCamera::mouseDown, this);
 	// this->input->setMouseMoveEventHandler(ShipCamera::mouseMove, this);
 }
 
@@ -95,14 +96,21 @@ void* ShipCamera::moveOut(void* args, double interval)
 
 void* ShipCamera::mouseMove(void* args, int x, int y)
 {
+	ShipCamera* camera = (ShipCamera*)args;
 	// console << x << " " << y << newline;
 }
 void* ShipCamera::mouseDown(void* args, double interval, int x, int y)
 {
+	ShipCamera* camera = (ShipCamera*)args;
 	console << x << " " << y << " for " << interval << newline;
 }
 void* ShipCamera::mouseClick(void* args, int x, int y)
 {
+	ShipCamera* camera = (ShipCamera*)args;
+
+	Explosion* explosion = new Explosion(x / 200.0f - 6.0f, 1.0f - y / 200.0f, -10.0f);
+	explosion->start();
+	camera->activeRegion->insertObject(explosion);
 	console << x << " " << y << newline;
 }
 
