@@ -45,64 +45,88 @@ void* ShipCamera::moveLeft(void* args, double interval)
 	// TODO: should ahve direct access to camera
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->moveByDirection(-interval * 10, 0.0f, 0.0f);
+
+	return NULL;
 }
 void* ShipCamera::moveRight(void* args, double interval)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->moveByDirection(interval * 10, 0.0f, 0.0f);
+
+	return NULL;
 }
 void* ShipCamera::moveUp(void* args, double interval)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->moveByDirection(0.0f, interval * 10, 0.0f);
+
+	return NULL;
 }
 void* ShipCamera::moveDown(void* args, double interval)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->moveByDirection(0.0f, -interval * 10, 0.0f);
+
+	return NULL;
 }
 
 void* ShipCamera::rotateLeft(void* args, double interval)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->rotateBy(-interval * 100.0f, 0.0f, 0.0f);
+
+	return NULL;
 }
 void* ShipCamera::rotateRight(void* args, double interval)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->rotateBy(interval * 100.0f, 0.0f, 0.0f);
+
+	return NULL;
 }
 void* ShipCamera::rotateUp(void* args, double interval)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->rotateBy(0.0f, interval * 100.0f, 0.0f);
+
+	return NULL;
 }
 void* ShipCamera::rotateDown(void* args, double interval)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->rotateBy(0.0f, -interval * 100.0f, 0.0f);
+
+	return NULL;
 }
 
 void* ShipCamera::moveIn(void* args, double interval)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->moveByDirection(0.0f, 0.0f, -interval * 10);
+
+	return NULL;
 }
 void* ShipCamera::moveOut(void* args, double interval)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	camera->moveByDirection(0.0f, 0.0f, interval * 10);
+
+	return NULL;
 }
 
 void* ShipCamera::mouseMove(void* args, int x, int y)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	// console << x << " " << y << newline;
+
+	return NULL;
 }
 void* ShipCamera::mouseDown(void* args, double interval, int x, int y)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 	console << x << " " << y << " for " << interval << newline;
+
+	return NULL;
 }
 void* ShipCamera::mouseClick(void* args, int x, int y)
 {
@@ -112,5 +136,7 @@ void* ShipCamera::mouseClick(void* args, int x, int y)
 	explosion->start();
 	camera->activeRegion->insertObject(explosion);
 	console << x << " " << y << newline;
+
+	return NULL;
 }
 

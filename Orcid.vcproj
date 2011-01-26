@@ -184,11 +184,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Galaxy.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Galaxy.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Ship.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Ship.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SolarSystem.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SolarSystem.h"
 				>
 			</File>
 			<File
@@ -201,22 +217,14 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Regions"
+			Name="Graphics"
 			>
 			<File
-				RelativePath=".\Galaxy.cpp"
+				RelativePath=".\ShipCamera.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Galaxy.h"
-				>
-			</File>
-			<File
-				RelativePath=".\SolarSystem.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\SolarSystem.h"
+				RelativePath=".\ShipCamera.h"
 				>
 			</File>
 		</Filter>
