@@ -132,11 +132,19 @@ void* ShipCamera::mouseClick(void* args, int x, int y)
 {
 	ShipCamera* camera = (ShipCamera*)args;
 
-	Explosion* explosion = new Explosion(x / 200.0f - 6.0f, 1.0f - y / 200.0f, -10.0f);
+	/*Explosion* explosion = new Explosion(x / 200.0f - 6.0f, 1.0f - y / 200.0f, -10.0f);
 	explosion->start();
-	camera->activeRegion->insertObject(explosion);
-	console << x << " " << y << newline;
+	camera->activeRegion->insertObject(explosion);*/
 
-	return NULL;
+	BaseObject* object = camera->getObjectAt(x, y);
+	if(object != 0x0)
+	{
+		Explosion* explosion = new Explosion(object->getPosition()[0], object->getPosition()[1], -10.0f);
+		explosion->start();
+		camera->activeRegion->insertObject(explosion);
+		// console << object->objectId() << newline;
+	}
+
+	// console << x << " " << y << newline;
 }
 

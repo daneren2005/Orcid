@@ -14,10 +14,10 @@ SolarSystem::SolarSystem()
 	// modelManager.loadModels(std::string("data/ships.obj"));
 	// modelManager.loadModels(std::string("data/teapot.obj"));
 	// modelManager.loadModels(std::string("data/Daedalus.obj"));
-	// modelManager.loadModels(std::string("data/Danube/danube.obj"));
+	modelManager.loadModels(std::string("data/Danube/danube.obj"));
 	// modelManager.loadModels(std::string("data/ak47.obj"));
 
-	/*Ship* ship;
+	Ship* ship;
 	ship = new Ship(0.0f, 0.0f, 20.0f);
 	ship->load();
 	objects.push_back(ship);
@@ -26,7 +26,7 @@ SolarSystem::SolarSystem()
 	// objects.push_back(ship);
 	ship = new Ship(5.0f, 1.0f, -60.0f);
 	ship->load();
-	objects.push_back(ship);*/
+	objects.push_back(ship);
 
 	/*Explosion* explosion = new Explosion();
 	explosion->start();
