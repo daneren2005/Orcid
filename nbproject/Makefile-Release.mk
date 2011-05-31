@@ -32,10 +32,9 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Station.o \
-	${OBJECTDIR}/main_list.o \
 	${OBJECTDIR}/SolarSystem.o \
-	${OBJECTDIR}/Galaxy.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/Galaxy.o \
 	${OBJECTDIR}/Explosion.o \
 	${OBJECTDIR}/Ship.o \
 	${OBJECTDIR}/ShipCamera.o
@@ -69,25 +68,20 @@ ${OBJECTDIR}/Station.o: nbproject/Makefile-${CND_CONF}.mk Station.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Station.o Station.cpp
 
-${OBJECTDIR}/main_list.o: nbproject/Makefile-${CND_CONF}.mk main_list.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main_list.o main_list.cpp
-
 ${OBJECTDIR}/SolarSystem.o: nbproject/Makefile-${CND_CONF}.mk SolarSystem.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/SolarSystem.o SolarSystem.cpp
 
-${OBJECTDIR}/Galaxy.o: nbproject/Makefile-${CND_CONF}.mk Galaxy.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Galaxy.o Galaxy.cpp
-
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/Galaxy.o: nbproject/Makefile-${CND_CONF}.mk Galaxy.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Galaxy.o Galaxy.cpp
 
 ${OBJECTDIR}/Explosion.o: nbproject/Makefile-${CND_CONF}.mk Explosion.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -24,7 +24,6 @@
     </logicalFolder>
     <itemPath>ReadMe.txt</itemPath>
     <itemPath>main.cpp</itemPath>
-    <itemPath>main_list.cpp</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -55,7 +54,7 @@
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>
-          <commandLine>-lpthread -lGL -lGLU -lSDL</commandLine>
+          <commandLine>-lpthread -lGL -lGLU -lSDL -ljpeg</commandLine>
         </linkerTool>
       </compileType>
     </conf>

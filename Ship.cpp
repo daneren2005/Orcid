@@ -6,7 +6,7 @@
  */
 
 #include "Ship.h"
-#include "ModelManager.h"
+#include "ResourceManager.h"
 
 #ifdef WIN32
 	#include <windows.h>
@@ -43,7 +43,7 @@ void Ship::update(double interval)
 void Ship::load()
 {
 	// this->model = modelManager.getModel(std::string("daedalus"));
-	this->model = modelManager.getModel(std::string("danube"));
+	this->mesh = resourceManager.getMesh(String("danube"));
 	// this->model = modelManager.getModel(std::string("AK47"));
 }
 
