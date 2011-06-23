@@ -14,7 +14,7 @@ SolarSystem::SolarSystem()
 	// modelManager.loadModels(std::string("data/ships.obj"));
 	// modelManager.loadModels(std::string("data/teapot.obj"));
 	// modelManager.loadModels(std::string("data/Daedalus.obj"));
-	resourceManager.loadMesh(String("data/Danube/danube.obj"), String("danube"));
+	resourceManager.loadModel(String("data/Danube/danube.obj"), String("danube"));
 	// modelManager.loadModels(std::string("data/ak47.obj"));
 
 	Ship* ship;

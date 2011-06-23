@@ -146,5 +146,7 @@ void* ShipCamera::mouseClick(void* args, int x, int y)
 	}
 
 	// console << x << " " << y << newline;
+
+	return NULL;
 }
 
