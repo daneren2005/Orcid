@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="62">
-  <logicalFolder name="root" displayName="root" projectFiles="true">
+<configurationDescriptor version="79">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="f1" displayName="Graphics" projectFiles="true">
       <itemPath>ShipCamera.cpp</itemPath>
       <itemPath>ShipCamera.h</itemPath>
@@ -27,57 +27,89 @@
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="1">
+    <conf name="Debug_Linux" type="1">
       <toolsSet>
-        <developmentServer>localhost</developmentServer>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
-        <platform>2</platform>
       </toolsSet>
       <compileType>
         <ccTool>
           <incDir>
             <pElem>../skyfire</pElem>
           </incDir>
+          <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
             <linkerLibProjectItem>
               <makeArtifact PL="../skyfire"
                             CT="3"
-                            CN="Debug"
+                            CN="Debug_Linux"
                             AC="true"
                             BL="true"
                             WD="../skyfire"
-                            BC="${MAKE}  -f skyfire-Makefile.mk CONF=Debug"
-                            CC="${MAKE}  -f skyfire-Makefile.mk CONF=Debug clean"
-                            OP="dist/Debug/GNU-Linux-x86/libskyfire.a">
+                            BC="${MAKE}  -f skyfire-Makefile.mk CONF=Debug_Linux"
+                            CC="${MAKE}  -f skyfire-Makefile.mk CONF=Debug_Linux clean"
+                            OP="dist/Debug_Linux/GNU-Linux-x86/libskyfire.a">
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>
-          <commandLine>-lpthread -lGL -lGLU -lSDL -ljpeg</commandLine>
+          <commandLine>-lpthread -lGLU -lSDL -ljpeg</commandLine>
         </linkerTool>
       </compileType>
     </conf>
-    <conf name="Release" type="1">
+    <conf name="Release_Linux" type="1">
       <toolsSet>
-        <developmentServer>localhost</developmentServer>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
-        <platform>2</platform>
       </toolsSet>
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>5</developmentMode>
+          <developmentMode>6</developmentMode>
+          <incDir>
+            <pElem>../skyfire</pElem>
+          </incDir>
+          <warningLevel>0</warningLevel>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
         </fortranCompilerTool>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../skyfire"
+                            CT="3"
+                            CN="Release_Linux"
+                            AC="false"
+                            BL="true"
+                            WD="../skyfire"
+                            BC="${MAKE}  -f skyfire-Makefile.mk CONF=Release_Linux"
+                            CC="${MAKE}  -f skyfire-Makefile.mk CONF=Release_Linux clean"
+                            OP="dist/Release_Linux/GNU-Linux-x86/libskyfire.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
           </linkerLibItems>
+          <commandLine>-lpthread -lGLU -lSDL -ljpeg</commandLine>
         </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Debug_Win32" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+      </compileType>
+    </conf>
+    <conf name="Release_Win32" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
       </compileType>
     </conf>
   </confs>
