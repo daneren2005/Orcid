@@ -232,10 +232,6 @@
 			RelativePath=".\main.cpp"
 			>
 		</File>
-		<File
-			RelativePath=".\main_list.cpp"
-			>
-		</File>
 	</Files>
 	<Globals>
 	</Globals>
