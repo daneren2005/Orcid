@@ -23,21 +23,21 @@ CND_PACKAGE_DIR_Release_Linux=dist/Release_Linux/GNU-Linux-x86/package
 CND_PACKAGE_NAME_Release_Linux=orcid.tar
 CND_PACKAGE_PATH_Release_Linux=dist/Release_Linux/GNU-Linux-x86/package/orcid.tar
 # Debug_Win32 configuration
-CND_PLATFORM_Debug_Win32=GNU-Linux-x86
-CND_ARTIFACT_DIR_Debug_Win32=dist/Debug_Win32/GNU-Linux-x86
+CND_PLATFORM_Debug_Win32=GNU-Windows
+CND_ARTIFACT_DIR_Debug_Win32=dist/Debug_Win32/GNU-Windows
 CND_ARTIFACT_NAME_Debug_Win32=orcid
-CND_ARTIFACT_PATH_Debug_Win32=dist/Debug_Win32/GNU-Linux-x86/orcid
-CND_PACKAGE_DIR_Debug_Win32=dist/Debug_Win32/GNU-Linux-x86/package
+CND_ARTIFACT_PATH_Debug_Win32=dist/Debug_Win32/GNU-Windows/orcid
+CND_PACKAGE_DIR_Debug_Win32=dist/Debug_Win32/GNU-Windows/package
 CND_PACKAGE_NAME_Debug_Win32=orcid.tar
-CND_PACKAGE_PATH_Debug_Win32=dist/Debug_Win32/GNU-Linux-x86/package/orcid.tar
+CND_PACKAGE_PATH_Debug_Win32=dist/Debug_Win32/GNU-Windows/package/orcid.tar
 # Release_Win32 configuration
-CND_PLATFORM_Release_Win32=GNU-Linux-x86
-CND_ARTIFACT_DIR_Release_Win32=dist/Release_Win32/GNU-Linux-x86
+CND_PLATFORM_Release_Win32=GNU-Windows
+CND_ARTIFACT_DIR_Release_Win32=dist/Release_Win32/GNU-Windows
 CND_ARTIFACT_NAME_Release_Win32=orcid
-CND_ARTIFACT_PATH_Release_Win32=dist/Release_Win32/GNU-Linux-x86/orcid
-CND_PACKAGE_DIR_Release_Win32=dist/Release_Win32/GNU-Linux-x86/package
+CND_ARTIFACT_PATH_Release_Win32=dist/Release_Win32/GNU-Windows/orcid
+CND_PACKAGE_DIR_Release_Win32=dist/Release_Win32/GNU-Windows/package
 CND_PACKAGE_NAME_Release_Win32=orcid.tar
-CND_PACKAGE_PATH_Release_Win32=dist/Release_Win32/GNU-Linux-x86/package/orcid.tar
+CND_PACKAGE_PATH_Release_Win32=dist/Release_Win32/GNU-Windows/package/orcid.tar
 #
 # include compiler specific variables
 #

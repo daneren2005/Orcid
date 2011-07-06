@@ -99,17 +99,63 @@
     <conf name="Debug_Win32" type="1">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>GNU|GNU</compilerSet>
+        <compilerSet>default</compilerSet>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../Skyfire</pElem>
+            <pElem>../Skyfire/Include</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../Skyfire"
+                            CT="3"
+                            CN="Debug_Win32"
+                            AC="false"
+                            BL="true"
+                            WD="../Skyfire"
+                            BC="${MAKE}  -f skyfire-Makefile.mk CONF=Debug_Win32"
+                            CC="${MAKE}  -f skyfire-Makefile.mk CONF=Debug_Win32 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libskyfire.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+          </linkerLibItems>
+          <commandLine>-lpthread -lGLU -lSDL -ljpeg</commandLine>
+        </linkerTool>
       </compileType>
     </conf>
     <conf name="Release_Win32" type="1">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>GNU|GNU</compilerSet>
+        <compilerSet>default</compilerSet>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../Skyfire</pElem>
+            <pElem>../Skyfire/Include</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../Skyfire"
+                            CT="3"
+                            CN="Release_Win32"
+                            AC="false"
+                            BL="true"
+                            WD="../Skyfire"
+                            BC="${MAKE}  -f skyfire-Makefile.mk CONF=Release_Win32"
+                            CC="${MAKE}  -f skyfire-Makefile.mk CONF=Release_Win32 clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libskyfire.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+          </linkerLibItems>
+          <commandLine>-lpthread -lGLU -lSDL -ljpeg</commandLine>
+        </linkerTool>
       </compileType>
     </conf>
   </confs>
