@@ -17,7 +17,7 @@ RANLIB=ranlib
 CC=gcc.exe
 CCC=g++.exe
 CXX=g++.exe
-FC=gfortran.exe
+FC=gfortran
 AS=as.exe
 
 # Macros
@@ -57,7 +57,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=../Skyfire/dist/Debug_Win32/GNU-Windows/libskyfire.a
+LDLIBSOPTIONS=-L../Skyfire/Lib -L/C/Windows/System32 ../Skyfire/dist/Debug_Win32/GNU-Windows/libskyfire.a ../Skyfire/Lib/pthreadVCE2.dll
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -65,44 +65,46 @@ LDLIBSOPTIONS=../Skyfire/dist/Debug_Win32/GNU-Windows/libskyfire.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/dist/Debug_Win32/GNU-Windows/libskyfire.a
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/Lib/pthreadVCE2.dll
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -lpthread -lGLU -lSDL -ljpeg -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -static-libgcc -static-libstdc++ --enable-stdcall-fixup -lpthread -lopengl32 -lGLU32 -lSDL -lGdi32 -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/Station.o: Station.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Station.o Station.cpp
+	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Station.o Station.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/Explosion.o: Explosion.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Explosion.o Explosion.cpp
+	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Explosion.o Explosion.cpp
 
 ${OBJECTDIR}/SolarSystem.o: SolarSystem.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/SolarSystem.o SolarSystem.cpp
+	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/SolarSystem.o SolarSystem.cpp
 
 ${OBJECTDIR}/Ship.o: Ship.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Ship.o Ship.cpp
+	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Ship.o Ship.cpp
 
 ${OBJECTDIR}/ShipCamera.o: ShipCamera.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/ShipCamera.o ShipCamera.cpp
+	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/ShipCamera.o ShipCamera.cpp
 
 ${OBJECTDIR}/Galaxy.o: Galaxy.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Galaxy.o Galaxy.cpp
+	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Galaxy.o Galaxy.cpp
 
 # Subprojects
 .build-subprojects:

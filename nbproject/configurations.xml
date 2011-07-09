@@ -107,8 +107,13 @@
             <pElem>../Skyfire</pElem>
             <pElem>../Skyfire/Include</pElem>
           </incDir>
+          <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
+          <linkerAddLib>
+            <pElem>../Skyfire/Lib</pElem>
+            <pElem>C:/Windows/System32</pElem>
+          </linkerAddLib>
           <linkerLibItems>
             <linkerLibProjectItem>
               <makeArtifact PL="../Skyfire"
@@ -122,8 +127,9 @@
                             OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libskyfire.a">
               </makeArtifact>
             </linkerLibProjectItem>
+            <linkerLibFileItem>../Skyfire/Lib/pthreadVCE2.dll</linkerLibFileItem>
           </linkerLibItems>
-          <commandLine>-lpthread -lGLU -lSDL -ljpeg</commandLine>
+          <commandLine>-static-libgcc -static-libstdc++ --enable-stdcall-fixup -lpthread -lopengl32 -lGLU32 -lSDL -lGdi32</commandLine>
         </linkerTool>
       </compileType>
     </conf>
@@ -134,12 +140,18 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <developmentMode>6</developmentMode>
           <incDir>
             <pElem>../Skyfire</pElem>
             <pElem>../Skyfire/Include</pElem>
           </incDir>
+          <warningLevel>0</warningLevel>
         </ccTool>
         <linkerTool>
+          <linkerAddLib>
+            <pElem>../Skyfire/Lib</pElem>
+            <pElem>C:/Windows/System32</pElem>
+          </linkerAddLib>
           <linkerLibItems>
             <linkerLibProjectItem>
               <makeArtifact PL="../Skyfire"
@@ -153,8 +165,9 @@
                             OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libskyfire.a">
               </makeArtifact>
             </linkerLibProjectItem>
+            <linkerLibFileItem>../Skyfire/Lib/pthreadVCE2.dll</linkerLibFileItem>
           </linkerLibItems>
-          <commandLine>-lpthread -lGLU -lSDL -ljpeg</commandLine>
+          <commandLine>-static-libgcc -static-libstdc++ --enable-stdcall-fixup -lpthread -lopengl32 -lGLU32 -lSDL -lGdi32</commandLine>
         </linkerTool>
       </compileType>
     </conf>
