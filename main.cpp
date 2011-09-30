@@ -30,13 +30,7 @@
 	std::cout << str2.cStr() << std::endl;*/
 
 	Window win(1280, 720);
-
-	#ifdef WIN32
-		win.start(program);
-	#endif
-	#ifdef __linux__
-		win.start();
-	#endif
+	win.start();
 
 	Galaxy galaxy;
 	galaxy.load();
@@ -45,7 +39,7 @@
 	Input* input = win.getInput();
 	camera->setEventHandlers(input);
 
-	win.setScene(camera);
+	win.setCamera(camera);
 	galaxy.setInput(input);
 	galaxy.start();
 

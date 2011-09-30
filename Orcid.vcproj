@@ -237,6 +237,10 @@
 			RelativePath=".\main.cpp"
 			>
 		</File>
+		<File
+			RelativePath=".\testDate.h"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>
