@@ -12,17 +12,17 @@
 	#include <windows.h>
 #endif
 
-Ship::Ship() : StaticObject()
+Ship::Ship() : BaseObject()
 {
 
 }
 
-Ship::Ship(float x, float y, float z) : StaticObject(x, y, z)
+Ship::Ship(float x, float y, float z) : BaseObject(x, y, z)
 {
 	
 }
 
-Ship::Ship(const Ship& orig) : StaticObject(orig)
+Ship::Ship(const Ship& orig) : BaseObject(orig)
 {
 	
 }

@@ -10,7 +10,7 @@
 
 #include "skyfire.h"
 
-class Ship : public StaticObject
+class Ship : public BaseObject
 {
 public:
 	Ship();
