@@ -241,6 +241,14 @@
 			RelativePath=".\testDate.h"
 			>
 		</File>
+		<File
+			RelativePath=".\testFiles.h"
+			>
+		</File>
+		<File
+			RelativePath=".\testHeap.h"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

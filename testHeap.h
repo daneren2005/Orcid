@@ -18,10 +18,9 @@
 #ifndef _TEST_PRIORITY_QUEUE_H
 #define	_TEST_PRIORITY_QUEUE_H
 
+#include "Timer.h"
 #include "PriorityQueue.h"
 #include <queue>
-#include <stdlib.h>
-#include <sys/time.h>
 
 #include <iostream>
 using namespace std;
@@ -134,24 +133,20 @@ void testPriorityQueueAccuracy()
 void testSTDPriorityQueueSpeed()
 {
 	priority_queue<int, vector<int>, compare> heap;
-	timeval start, donePushing, donePopping;
+	Timer t;
+	t.start();
 
-	gettimeofday(&start, 0);
 	for(int i = 0; i < 1000000; i++)
 	{
 		heap.push(rand() % 100000000);
 	}
-	gettimeofday(&donePushing, 0);
+	double pushing = t.elapsedTime();
 
 	while(!heap.empty())
 	{
 		heap.pop();
 	}
-
-	gettimeofday(&donePopping, 0);
-
-	double pushing = (donePushing.tv_sec - start.tv_sec) * 1000 + (donePushing.tv_usec - start.tv_usec) / 1000;
-	double popping = (donePopping.tv_sec - donePushing.tv_sec) * 1000 + (donePopping.tv_usec - donePushing.tv_usec) / 1000;
+	double popping = t.elapsedTime();
 	
 	cout << "Times for STL PriorityQueue" << endl;
 	cout << "Time to push: " << pushing << endl;
@@ -161,24 +156,20 @@ void testSTDPriorityQueueSpeed()
 void testBinaryPriorityQueueSpeed()
 {
 	PriorityQueue<int> heap;
-	timeval start, donePushing, donePopping;
+	Timer t;
+	t.start();
 
-	gettimeofday(&start, 0);
 	for(int i = 0; i < 1000000; i++)
 	{
 		heap.insert(rand() % 1000000);
 	}
-	gettimeofday(&donePushing, 0);
+	double pushing = t.elapsedTime();
 
 	while(!heap.empty())
 	{
 		heap.remove();
 	}
-
-	gettimeofday(&donePopping, 0);
-
-	double pushing = (donePushing.tv_sec - start.tv_sec) * 1000 + (donePushing.tv_usec - start.tv_usec) / 1000;
-	double popping = (donePopping.tv_sec - donePushing.tv_sec) * 1000 + (donePopping.tv_usec - donePushing.tv_usec) / 1000;
+	double popping = t.elapsedTime();
 	
 	cout << "Times for PriorityQueue" << endl;
 	cout << "Time to push: " << pushing << endl;
