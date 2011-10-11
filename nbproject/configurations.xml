@@ -26,6 +26,7 @@
     <itemPath>main.cpp</itemPath>
     <itemPath>testDate.h</itemPath>
     <itemPath>testFiles.h</itemPath>
+    <itemPath>testHeap.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
