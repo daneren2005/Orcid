@@ -24,8 +24,10 @@ void ShipCamera::setEventHandlers(Input* input)
 {
 	input->setKeyDownEventHandler(KEY_LEFT, ShipCamera::moveLeft, this);
 	input->setKeyDownEventHandler(KEY_RIGHT, ShipCamera::moveRight, this);
-	input->setKeyDownEventHandler(KEY_UP, ShipCamera::moveUp, this);
 	input->setKeyDownEventHandler(KEY_DOWN, ShipCamera::moveDown, this);
+	input->setKeyDownEventHandler(KEY_UP, ShipCamera::moveUp, this);
+	// TODO: doesn't work if its here
+	// input->setKeyDownEventHandler(KEY_DOWN, ShipCamera::moveDown, this);
 
 	input->setKeyDownEventHandler(KEY_PAGEUP, ShipCamera::moveIn, this);
 	input->setKeyDownEventHandler(KEY_PAGEDOWN, ShipCamera::moveOut, this);
