@@ -17,7 +17,7 @@
       <itemPath>Station.cpp</itemPath>
       <itemPath>Station.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="f3" displayName="tests" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f3" displayName="tests" projectFiles="true">
       <itemPath>testDate.h</itemPath>
       <itemPath>testFiles.h</itemPath>
       <itemPath>testHeap.h</itemPath>
@@ -62,7 +62,7 @@
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>
-          <commandLine>-lpthread -lGLU -lSDL -ljpeg</commandLine>
+          <commandLine>-lpthread -lGL -lGLU -lSDL -ljpeg -lrt</commandLine>
         </linkerTool>
       </compileType>
     </conf>
@@ -100,7 +100,7 @@
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>
-          <commandLine>-lpthread -lGLU -lSDL -ljpeg</commandLine>
+          <commandLine>-lpthread -lGL -lGLU -lSDL -ljpeg -lrt</commandLine>
         </linkerTool>
       </compileType>
     </conf>

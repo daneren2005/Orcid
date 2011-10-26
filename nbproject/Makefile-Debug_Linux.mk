@@ -67,7 +67,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid: ../skyfire/dist/Debug_Linux/GN
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -lpthread -lGLU -lSDL -ljpeg -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -lpthread -lGL -lGLU -lSDL -ljpeg -lrt -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/Station.o: Station.cpp 
 	${MKDIR} -p ${OBJECTDIR}
