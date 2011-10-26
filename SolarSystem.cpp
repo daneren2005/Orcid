@@ -8,7 +8,7 @@
 #include "SolarSystem.h"
 #include "Explosion.h"
 
-SolarSystem::SolarSystem()
+SolarSystem::SolarSystem(FirstPersonCamera* camera)
 {
 	// modelManager.addModel(&mesh, std::string("ship"));
 	// modelManager.loadModels(std::string("data/ships.obj"));
@@ -21,6 +21,8 @@ SolarSystem::SolarSystem()
 	ship = new Ship(0.0f, 0.0f, 20.0f);
 	ship->load();
 	objects.pushBack(ship);
+        
+        camera->attachTo(ship);
 	// ship = new Ship(0.0f, -6.0f, 20.0f);
 	// ship->load();
 	// objects.push_back(ship);

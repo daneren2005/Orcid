@@ -8,11 +8,11 @@
 #include "ShipCamera.h"
 #include "Explosion.h"
 
-ShipCamera::ShipCamera() : Camera()
+ShipCamera::ShipCamera() : FirstPersonCamera()
 {
 }
 
-ShipCamera::ShipCamera(const ShipCamera& orig) : Camera(orig)
+ShipCamera::ShipCamera(const ShipCamera& orig) : FirstPersonCamera(orig)
 {
 }
 

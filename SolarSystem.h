@@ -14,7 +14,7 @@
 class SolarSystem : public Region
 {
 public:
-	SolarSystem();
+	SolarSystem(FirstPersonCamera* camera);
 	SolarSystem(const SolarSystem& orig);
 	virtual ~SolarSystem();
 private:

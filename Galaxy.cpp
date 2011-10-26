@@ -25,7 +25,7 @@ Galaxy::~Galaxy()
 
 void Galaxy::load()
 {
-	SolarSystem* system = new SolarSystem();
+	SolarSystem* system = new SolarSystem((FirstPersonCamera*)this->camera);
 	this->addRegion(system);
 	this->setActiveRegion(system);
 }

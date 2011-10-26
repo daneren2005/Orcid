@@ -10,7 +10,7 @@
 
 #include "skyfire.h"
 
-class ShipCamera : public Camera
+class ShipCamera : public FirstPersonCamera
 {
 public:
 	ShipCamera();
