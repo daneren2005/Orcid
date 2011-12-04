@@ -18,6 +18,7 @@
       <itemPath>Station.h</itemPath>
     </logicalFolder>
     <logicalFolder name="f3" displayName="tests" projectFiles="true">
+      <itemPath>testDataFile.h</itemPath>
       <itemPath>testDate.h</itemPath>
       <itemPath>testFiles.h</itemPath>
       <itemPath>testHeap.h</itemPath>
