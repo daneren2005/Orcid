@@ -26,6 +26,15 @@ void readDataFile()
 {
 	DataFile units(String("data/units.dat"));
 	units.load();
+	
+	for(Map<DataFile::Object*, String>::Iterator it = units.begin(); !it; it++)
+	{
+		console << "Name: " << it.key() << newline;
+		for(Map<String, String>::Iterator it2 = it.value()->properties.begin(); !it2; it2++)
+		{
+			console << it2.key() << ": " << it2.value() << newline;
+		}
+	}
 }
 
 #endif	/* TESTDATAFILE_H */
