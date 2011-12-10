@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Orcid
+PROJECTNAME=orcid
 
 # Active Configuration
 DEFAULTCONF=Debug_Linux
