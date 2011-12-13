@@ -20,7 +20,7 @@ public:
 
 	virtual void load();
 private:
-
+	DataFile* units;
 };
 
 #endif	/* _GALAXY_H */

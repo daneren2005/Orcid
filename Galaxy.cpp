@@ -10,6 +10,7 @@
 
 Galaxy::Galaxy() : Universe()
 {
+	units = 0x0;
 	this->camera = new ShipCamera();
 }
 
@@ -25,6 +26,9 @@ Galaxy::~Galaxy()
 
 void Galaxy::load()
 {
+	units = new DataFile(String("data/units.dat"));
+	units->load();
+	
 	SolarSystem* system = new SolarSystem((FirstPersonCamera*)this->camera);
 	this->addRegion(system);
 	this->setActiveRegion(system);

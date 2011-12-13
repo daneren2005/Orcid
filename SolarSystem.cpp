@@ -22,7 +22,7 @@ SolarSystem::SolarSystem(FirstPersonCamera* camera)
 	ship->load();
 	objects.pushBack(ship);
         
-        camera->attachTo(ship);
+    // camera->attachTo(ship);
 	// ship = new Ship(0.0f, -6.0f, 20.0f);
 	// ship->load();
 	// objects.push_back(ship);
