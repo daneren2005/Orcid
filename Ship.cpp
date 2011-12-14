@@ -22,9 +22,9 @@ Ship::Ship(float x, float y, float z) : BaseObject(x, y, z)
 	
 }
 
-Ship::Ship(DataFile::Object* unit, DataFile::Object* instance)
+Ship::Ship(DataFile::Object* unit, DataFile::Object* instance) : BaseObject(0.0f, 0.0f, 40.0f)
 {
-	model = resourceManager.getModel(unit->properties.search("model"));
+	model = resourceManager.getModel(unit->name);
 }
 
 Ship::Ship(const Ship& orig) : BaseObject(orig)

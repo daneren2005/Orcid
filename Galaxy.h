@@ -19,6 +19,7 @@ public:
 	virtual ~Galaxy();
 
 	virtual void load();
+	virtual void addRegion(Region* region);
 private:
 	DataFile* units;
 };

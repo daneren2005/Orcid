@@ -10,11 +10,11 @@ void writeDataFile()
 	DataFile::Object* obj = new DataFile::Object("Ship1");
 	obj->properties.insert("data/Danube/danube.obj", "model");
 	
-	DataFile::Object* obj2 = new DataFile::Object("Station1");
-	obj2->properties.insert("data/Danube/danube.obj", "model");
+	DataFile::Object* obj2 = new DataFile::Object("Ship2");
+	obj2->properties.insert("data/Daedalus.obj", "model");
 	
-	DataFile::Object* obj3 = new DataFile::Object("Ship2");
-	obj3->properties.insert("data/Danube/danube.obj", "model");
+	DataFile::Object* obj3 = new DataFile::Object("Ship3");
+	obj3->properties.insert("data/Daedalus.3ds", "model");
 	
 	units.insertObject(obj);
 	units.insertObject(obj2);

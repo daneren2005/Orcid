@@ -11,14 +11,20 @@
 #include "skyfire.h"
 #include "Ship.h"
 
+class Galaxy;
+
 class SolarSystem : public Region
 {
 public:
 	SolarSystem(FirstPersonCamera* camera);
 	SolarSystem(const SolarSystem& orig);
 	virtual ~SolarSystem();
-private:
-
+	
+	virtual void load();
+	
+	friend class Galaxy;
+protected:
+	DataFile* units;
 };
 
 #endif	/* _SOLARSYSTEM_H */

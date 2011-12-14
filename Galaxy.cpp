@@ -31,6 +31,14 @@ void Galaxy::load()
 	
 	SolarSystem* system = new SolarSystem((FirstPersonCamera*)this->camera);
 	this->addRegion(system);
+	system->load();
 	this->setActiveRegion(system);
+}
+
+void Galaxy::addRegion(Region* region)
+{
+	((SolarSystem*)region)->universe = this;
+	((SolarSystem*)region)->units = units;
+	this->regions.pushFront(region);
 }
 
