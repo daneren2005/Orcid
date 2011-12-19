@@ -29,10 +29,8 @@ void SolarSystem::load()
 		resourceManager.loadModel(model, it.value()->name);
 	}*/
 	
-	// resourceManager.loadModel(String("data/Danube/danube.obj"), String("Ship1"));
-	
 	DataFile::Object* obj = units->getObject("Ship1");
-	resourceManager.loadModel(obj->properties.search("model"), obj->name);
+	resourceManager.loadModel(obj->strings.search("model"), obj->name);
 
 	Ship* ship;
 	ship = new Ship(obj, 0x0);
