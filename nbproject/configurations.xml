@@ -22,6 +22,7 @@
       <itemPath>testDate.h</itemPath>
       <itemPath>testFiles.h</itemPath>
       <itemPath>testHeap.h</itemPath>
+      <itemPath>testMap.h</itemPath>
       <itemPath>testSearch.h</itemPath>
       <itemPath>testSort.h</itemPath>
       <itemPath>testTSList.h</itemPath>
