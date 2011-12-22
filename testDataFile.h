@@ -11,22 +11,22 @@ void writeDataFile()
 	obj->strings.insert("data/Danube/danube.obj", "model");
 	obj->floats.insert(1.0f, "offset");
 	
-	DataFile::Object* obj2 = new DataFile::Object("Station1");
-	obj2->strings.insert("data/Danube/danube.obj", "model");
+	DataFile::Object* obj2 = new DataFile::Object("Ship2");
+	obj2->strings.insert("data/Daedalus.obj", "model");
 	obj2->floats.insert(2.0f, "offset");
 	
-	DataFile::Object* obj3 = new DataFile::Object("Ship2");
-	obj3->strings.insert("data/Danube/danube.obj", "model");
+	DataFile::Object* obj3 = new DataFile::Object("Ship3");
+	obj3->strings.insert("data/Daedalus.3ds", "model");
 	obj3->floats.insert(3.0f, "offset");
 
 	DataFile::Object* item1 = new DataFile::Object("item1");
 	DataFile::Object* item2 = new DataFile::Object("item2");
 
-	obj->objects.insert(item1, "Gun");
+	/*obj->objects.insert(item1, "Gun");
 	obj2->objects.insert(item2, "Trash");
 	obj3->objects.insert(item1, "Main Drive");
 	obj3->objects.insert(item2, "Trash Drive");
-	obj3->objects.insert(item1, "Test Drive");
+	obj3->objects.insert(item1, "Test Drive");*/
 	
 	units.insertObject(obj);
 	units.insertObject(obj2);
