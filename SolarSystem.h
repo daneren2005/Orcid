@@ -20,8 +20,7 @@ public:
 	SolarSystem(const SolarSystem& orig);
 	virtual ~SolarSystem();
 	
-	virtual void load();
-	virtual void load(const DataFile& world);
+	virtual void load(DataFile& world);
 	
 	friend class Galaxy;
 protected:
