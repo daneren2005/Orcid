@@ -22,11 +22,6 @@ Ship::Ship(float x, float y, float z) : BaseObject(x, y, z)
 	
 }
 
-Ship::Ship(DataFile::Object* unit, DataFile::Object* instance) : BaseObject(0.0f, 0.0f, 40.0f)
-{
-	model = resourceManager.getModel(unit->name);
-}
-
 Ship::Ship(const Ship& orig) : BaseObject(orig)
 {
 	
@@ -40,15 +35,16 @@ void Ship::update(double interval)
 {
 	// this->moveByDirection(0.0f, 0.0f, interval * 1.0f);
 
-	this->rotateBy(interval * 20.0f, 0.0f, 0.0f);
+	// this->rotateBy(interval * 20.0f, 0.0f, 0.0f);
 	// this->rotateBy(0.0f, interval * 360.0f, 0.0f);
 	// this->rotateBy(0.0f, 0.0f, interval * 360.0f);
 }
 
-void Ship::load()
+void Ship::load(DataFile::Object* unit, DataFile::Object* instance)
 {
-	// this->model = modelManager.getModel(std::string("daedalus"));
-	this->model = resourceManager.getModel(String("danube"));
-	// this->model = modelManager.getModel(std::string("AK47"));
+	model = resourceManager.getModel(unit->name);
+	this->position[0] = instance->floats.search("x");
+	this->position[1] = instance->floats.search("y");
+	this->position[2] = instance->floats.search("z");
 }
 

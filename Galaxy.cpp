@@ -28,10 +28,15 @@ void Galaxy::load()
 {
 	units = new DataFile(String("data/units.dat"));
 	units->load();
+	DataFile::Object* obj = units->getObject("Ship1");
+	resourceManager.loadModel(obj->strings.search("model"), obj->name);
+	
+	DataFile world(String("data/sol_system.dat"));
+	world.load();
 	
 	SolarSystem* system = new SolarSystem((FirstPersonCamera*)this->camera);
 	this->addRegion(system);
-	system->load();
+	system->load(world);
 	this->setActiveRegion(system);
 }
 

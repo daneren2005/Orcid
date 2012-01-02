@@ -28,14 +28,6 @@ void SolarSystem::load()
 		String model = it.value()->properties.search("Model");
 		resourceManager.loadModel(model, it.value()->name);
 	}*/
-	
-	DataFile::Object* obj = units->getObject("Ship1");
-	resourceManager.loadModel(obj->strings.search("model"), obj->name);
-
-	Ship* ship;
-	ship = new Ship(obj, 0x0);
-	// ship->load();
-	objects.pushBack(ship);
         
     // camera->attachTo(ship);
 	// ship = new Ship(0.0f, -6.0f, 20.0f);
@@ -48,7 +40,25 @@ void SolarSystem::load()
 	/*Explosion* explosion = new Explosion();
 	explosion->start();
 	objects.push_back(explosion);*/
+}
 
+void SolarSystem::load(const DataFile& world)
+{
+	DataFile::Object* obj = units->getObject("Ship1");
+	
+	DataFile::Object* shipData = world.getObject("Ship1");
+	Ship* ship;
+	ship = new Ship();
+	ship->load(obj, shipData);
+	// ship->load();
+	objects.pushBack(ship);
+	
+	shipData = world.getObject("Ship2");
+	ship = new Ship();
+	ship->load(obj, shipData);
+	// ship->load();
+	objects.pushBack(ship);
+	
 	objects.pushFront(new AxisObject(0.0f, 0.0f, 0.0f));
 }
 

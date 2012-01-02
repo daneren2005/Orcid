@@ -21,6 +21,7 @@ public:
 	virtual ~SolarSystem();
 	
 	virtual void load();
+	virtual void load(const DataFile& world);
 	
 	friend class Galaxy;
 protected:

@@ -15,13 +15,12 @@ class Ship : public BaseObject
 public:
 	Ship();
 	Ship(float x, float y, float z);
-	Ship(DataFile::Object* unit, DataFile::Object* instance);
 	Ship(const Ship& orig);
 	virtual ~Ship();
 
 	virtual void update(double interval);
 
-	virtual void load();
+	virtual void load(DataFile::Object* unit, DataFile::Object* instance);
 private:
 
 };
