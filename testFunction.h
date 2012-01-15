@@ -41,7 +41,7 @@ void testFunction()
 {
 	Function<int, int> function;
 	function = test_function();
-	console << "Struct Function:" << function(10) << " " << function(15) << newline;
+	console << "Struct Function: " << function(10) << " " << function(15) << newline;
 
 	function = test_function2;
 	Function<int, int> copyFunction = function;
@@ -90,6 +90,9 @@ void testFunction()
 	func2->setFunction(&testClass::test_function2);
 	func = func2;
 	console << "Member Function pointer Set: " << func->execute(10) << " " << func->execute(15) << newline;
+	
+	function = (Function<int, int>)function3;
+	console << "Function cast MemberFunction: " << function(10) << " " << function(15) << newline;
 
 	// Just checking it will compile correctly
 	Function<void, int> function4;
