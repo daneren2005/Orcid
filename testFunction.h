@@ -30,18 +30,26 @@ public:
 	{
 		return x / 3;
 	}
+	int test_function3(long x)
+	{
+		return x / 2 + 1;
+	}
 };
 
 void output(int r)
 {
 	console << "Void return: " << r << newline;
 }
+void outputCast(long x)
+{
+	console << "Function cast: " << x << newline;
+}
 
 void testFunction()
 {
 	Function<int, int> function;
 	function = test_function();
-	console << "Struct Function: " << function(10) << " " << function(15) << newline;
+	console << "Struct Function:" << function(10) << " " << function(15) << newline;
 
 	function = test_function2;
 	Function<int, int> copyFunction = function;
@@ -90,14 +98,29 @@ void testFunction()
 	func2->setFunction(&testClass::test_function2);
 	func = func2;
 	console << "Member Function pointer Set: " << func->execute(10) << " " << func->execute(15) << newline;
-	
-	function = (Function<int, int>)function3;
-	console << "Function cast MemberFunction: " << function(10) << " " << function(15) << newline;
 
 	// Just checking it will compile correctly
 	Function<void, int> function4;
 	function4 = output;
 	function4(19);
+
+	// Function casting tests
+	Function<void, long> function5 = outputCast;
+	function4 = function5;
+	function4(20);
+	function4 = (Function<void, long>)function5;
+	function4(21);
+	function4 = output;
+	// function4 = outputCast;
+	function4(22);
+
+	// Member function casting tests
+	MemberFunction<testClass, int, long> function6(&t);
+	function6 = &testClass::test_function3;
+	function2 = function6;
+	console << "Member implicit cast: " << function2(10) << newline;
+	function2 = (MemberFunction<testClass, int, long>)function6;
+	console << "Member explicit cast: " << function2(10) << newline;
 }
 
 #endif

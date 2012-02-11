@@ -36,13 +36,13 @@ void writeDataFile()
 	DataFile world(String("data/sol_system.dat"));
 	
 	obj = new DataFile::Object("Ship1");
-	obj->floats.insert(-10.0f, "x");
+	obj->floats.insert(0.0f, "x");
 	obj->floats.insert(0.0f, "y");
 	obj->floats.insert(40.0f, "z");
 	world.insertObject(obj);
 	
 	obj = new DataFile::Object("Ship2");
-	obj->floats.insert(10.0f, "x");
+	obj->floats.insert(30.0f, "x");
 	obj->floats.insert(0.0f, "y");
 	obj->floats.insert(40.0f, "z");
 	world.insertObject(obj);

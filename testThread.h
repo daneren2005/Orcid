@@ -4,7 +4,7 @@
 #include "ThreadManager.h"
 #include "Thread.h"
 
-void nothing(Thread* arg)
+void nothing(Thread*)
 {
 
 }
@@ -35,10 +35,10 @@ void testThread()
 void testThreadManager()
 {
 	ThreadManager manager;
-	manager.setWorkers(2);
+	manager.setWorkers(5);
 	int* j = new int(0);
 
-	for(int i = 0; i < 5; i++)
+	for(int i = 0; i < 10; i++)
 	{
 		manager.addJob(sampleJob, j);
 	}
