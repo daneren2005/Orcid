@@ -20,9 +20,14 @@ public:
 
 	virtual void update(double interval);
 
+	virtual void drawEvent();
 	virtual void load(DataFile::Object* unit, DataFile::Object* instance);
+	
+	virtual void select();
+	virtual void deselect();
+	virtual void switchSelect();
 private:
-
+	bool selected;
 };
 
 #endif	/* _SHIP_H */
