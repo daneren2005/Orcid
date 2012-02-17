@@ -136,7 +136,8 @@ void* ShipCamera::mouseClick(void* args, int x, int y)
 	ShipCamera* camera = (ShipCamera*)args;
 
 	Ship* object = (Ship*)camera->getObjectAt(x, y);
-	object->switchSelect();
+	if(object != 0x0)
+		object->switchSelect();
 
 	return NULL;
 }
