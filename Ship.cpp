@@ -40,10 +40,12 @@ void Ship::update(double interval)
 	// this->rotateBy(0.0f, 0.0f, interval * 360.0f);
 }
 
-void Ship::drawEvent()
+void Ship::draw()
 {
 	if(selected)
 		this->getBoundingBox().draw();
+	
+	BaseObject::draw();
 }
 
 void Ship::load(DataFile::Object* unit, DataFile::Object* instance)
