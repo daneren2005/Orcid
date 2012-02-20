@@ -20,7 +20,6 @@ public:
 
 	virtual void update(double interval);
 
-	virtual void draw();
 	virtual void load(DataFile::Object* unit, DataFile::Object* instance);
 	
 	virtual void select();

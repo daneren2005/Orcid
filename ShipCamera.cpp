@@ -11,14 +11,24 @@
 
 ShipCamera::ShipCamera() : FirstPersonCamera()
 {
+	this->selected = 0x0;
 }
 
 ShipCamera::ShipCamera(const ShipCamera& orig) : FirstPersonCamera(orig)
 {
+	this->selected = orig.selected;
 }
 
 ShipCamera::~ShipCamera()
 {
+}
+
+void ShipCamera::render()
+{
+	if(selected != 0x0)
+		selected->getBoundingBox().draw();
+	
+	FirstPersonCamera::render();
 }
 
 void ShipCamera::setEventHandlers(Input* input)
@@ -137,7 +147,14 @@ void* ShipCamera::mouseClick(void* args, int x, int y)
 
 	Ship* object = (Ship*)camera->getObjectAt(x, y);
 	if(object != 0x0)
+	{
+		camera->selected = object;
 		object->switchSelect();
+	}
+	else
+	{
+		camera->selected = 0x0;
+	}
 
 	return NULL;
 }

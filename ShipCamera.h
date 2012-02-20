@@ -9,6 +9,7 @@
 #define	_SHIPCAMERA_H
 
 #include "skyfire.h"
+#include "Ship.h"
 
 class ShipCamera : public FirstPersonCamera
 {
@@ -16,6 +17,8 @@ public:
 	ShipCamera();
 	ShipCamera(const ShipCamera& orig);
 	virtual ~ShipCamera();
+	
+	virtual void render();
 
 	void setEventHandlers(Input* input);
 
@@ -36,7 +39,7 @@ public:
 	static void* mouseDown(void* args, double interval, int x, int y);
 	static void* mouseClick(void* args, int x, int y);
 private:
-
+	Ship* selected;
 };
 
 #endif	/* _SHIPCAMERA_H */
