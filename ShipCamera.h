@@ -20,7 +20,7 @@ public:
 	
 	virtual void render();
 
-	void setEventHandlers(Input* input);
+	virtual void setEventHandlers(Input* input);
 
 	static void* moveLeft(void* args, double interval);
 	static void* moveRight(void* args, double interval);

@@ -22,8 +22,6 @@
 	galaxy.start();
 
 	ShipCamera* camera = (ShipCamera*)galaxy.getCamera();
-	Input* input = win.getInput();
-	camera->setEventHandlers(input);
 	win.setRenderer(camera);
 
 	// Set program into infinite loop until window thread is stopped
