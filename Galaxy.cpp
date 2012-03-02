@@ -12,20 +12,7 @@ Galaxy::Galaxy() : Universe()
 {
 	units = 0x0;
 	this->camera = new ShipCamera();
-}
-
-Galaxy::Galaxy(const Galaxy& orig)
-{
-
-}
-
-Galaxy::~Galaxy()
-{
-
-}
-
-void Galaxy::load()
-{
+	
 	units = new DataFile(String("data/units.dat"));
 	units->load();
 	DataFile::Object* obj = units->getObject("Ship1");
@@ -38,6 +25,16 @@ void Galaxy::load()
 	this->addRegion(system);
 	system->load(world);
 	this->setActiveRegion(system);
+}
+
+Galaxy::Galaxy(const Galaxy& orig)
+{
+
+}
+
+Galaxy::~Galaxy()
+{
+
 }
 
 void Galaxy::addRegion(Region* region)
