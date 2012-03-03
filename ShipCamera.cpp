@@ -33,129 +33,89 @@ void ShipCamera::render()
 
 void ShipCamera::setEventHandlers(Input* input)
 {
-	input->setKeyDownEventHandler(KEY_LEFT, ShipCamera::moveLeft, this);
-	input->setKeyDownEventHandler(KEY_RIGHT, ShipCamera::moveRight, this);
-	input->setKeyDownEventHandler(KEY_DOWN, ShipCamera::moveDown, this);
-	input->setKeyDownEventHandler(KEY_UP, ShipCamera::moveUp, this);
+	input->setKeyDownEventHandler(KEY_LEFT, (Function<void, double>)(MemberFunction<ShipCamera, void, double>(&ShipCamera::moveLeft, this)));
+	input->setKeyDownEventHandler(KEY_RIGHT, (Function<void, double>)MemberFunction<ShipCamera, void, double>(&ShipCamera::moveRight, this));
+	input->setKeyDownEventHandler(KEY_DOWN, (Function<void, double>)MemberFunction<ShipCamera, void, double>(&ShipCamera::moveDown, this));
+	input->setKeyDownEventHandler(KEY_UP, (Function<void, double>)MemberFunction<ShipCamera, void, double>(&ShipCamera::moveUp, this));
 	// TODO: doesn't work if its here
 	// input->setKeyDownEventHandler(KEY_DOWN, ShipCamera::moveDown, this);
 
-	input->setKeyDownEventHandler(KEY_PAGEUP, ShipCamera::moveIn, this);
-	input->setKeyDownEventHandler(KEY_PAGEDOWN, ShipCamera::moveOut, this);
+	input->setKeyDownEventHandler(KEY_PAGEUP, (Function<void, double>)MemberFunction<ShipCamera, void, double>(&ShipCamera::moveIn, this));
+	input->setKeyDownEventHandler(KEY_PAGEDOWN, (Function<void, double>)MemberFunction<ShipCamera, void, double>(&ShipCamera::moveOut, this));
 
-	input->setKeyDownEventHandler(KEY_A, ShipCamera::rotateLeft, this);
-	input->setKeyDownEventHandler(KEY_D, ShipCamera::rotateRight, this);
-	input->setKeyDownEventHandler(KEY_W, ShipCamera::rotateUp, this);
-	input->setKeyDownEventHandler(KEY_S, ShipCamera::rotateDown, this);
+	input->setKeyDownEventHandler(KEY_A, (Function<void, double>)MemberFunction<ShipCamera, void, double>(&ShipCamera::rotateLeft, this));
+	input->setKeyDownEventHandler(KEY_D, (Function<void, double>)MemberFunction<ShipCamera, void, double>(&ShipCamera::rotateRight, this));
+	input->setKeyDownEventHandler(KEY_W, (Function<void, double>)MemberFunction<ShipCamera, void, double>(&ShipCamera::rotateUp, this));
+	input->setKeyDownEventHandler(KEY_S, (Function<void, double>)MemberFunction<ShipCamera, void, double>(&ShipCamera::rotateDown, this));
 
-	input->setMousePressEventHandler(BUTTON_LEFT, ShipCamera::mouseClick, this);
+	input->setMousePressEventHandler(BUTTON_LEFT, (Function<void, int, int>)MemberFunction<ShipCamera, void, int, int>(&ShipCamera::mouseClick, this));
 	// input->setMouseDownEventHandler(BUTTON_LEFT, ShipCamera::mouseDown, this);
 	// this->input->setMouseMoveEventHandler(ShipCamera::mouseMove, this);
 }
 
-void* ShipCamera::moveLeft(void* args, double interval)
+void ShipCamera::moveLeft(double interval)
 {
-	// TODO: should ahve direct access to camera
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->moveByDirection(-interval * 10, 0.0f, 0.0f);
-
-	return NULL;
+	moveByDirection(-interval * 10, 0.0f, 0.0f);
 }
-void* ShipCamera::moveRight(void* args, double interval)
+void ShipCamera::moveRight(double interval)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->moveByDirection(interval * 10, 0.0f, 0.0f);
-
-	return NULL;
+	moveByDirection(interval * 10, 0.0f, 0.0f);
 }
-void* ShipCamera::moveUp(void* args, double interval)
+void ShipCamera::moveUp(double interval)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->moveByDirection(0.0f, interval * 10, 0.0f);
-
-	return NULL;
+	moveByDirection(0.0f, interval * 10, 0.0f);
 }
-void* ShipCamera::moveDown(void* args, double interval)
+void ShipCamera::moveDown(double interval)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->moveByDirection(0.0f, -interval * 10, 0.0f);
-
-	return NULL;
+	moveByDirection(0.0f, -interval * 10, 0.0f);
 }
 
-void* ShipCamera::rotateLeft(void* args, double interval)
+void ShipCamera::rotateLeft(double interval)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->rotateBy(-interval * 100.0f, 0.0f, 0.0f);
+	rotateBy(-interval * 100.0f, 0.0f, 0.0f);
 
-	return NULL;
 }
-void* ShipCamera::rotateRight(void* args, double interval)
+void ShipCamera::rotateRight(double interval)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->rotateBy(interval * 100.0f, 0.0f, 0.0f);
-
-	return NULL;
+	rotateBy(interval * 100.0f, 0.0f, 0.0f);
 }
-void* ShipCamera::rotateUp(void* args, double interval)
+void ShipCamera::rotateUp(double interval)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->rotateBy(0.0f, interval * 100.0f, 0.0f);
-
-	return NULL;
+	rotateBy(0.0f, interval * 100.0f, 0.0f);
 }
-void* ShipCamera::rotateDown(void* args, double interval)
+void ShipCamera::rotateDown(double interval)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->rotateBy(0.0f, -interval * 100.0f, 0.0f);
-
-	return NULL;
+	rotateBy(0.0f, -interval * 100.0f, 0.0f);
 }
 
-void* ShipCamera::moveIn(void* args, double interval)
+void ShipCamera::moveIn(double interval)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->moveByDirection(0.0f, 0.0f, -interval * 10);
-
-	return NULL;
+	moveByDirection(0.0f, 0.0f, -interval * 10);
 }
-void* ShipCamera::moveOut(void* args, double interval)
+void ShipCamera::moveOut(double interval)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	camera->moveByDirection(0.0f, 0.0f, interval * 10);
-
-	return NULL;
+	moveByDirection(0.0f, 0.0f, interval * 10);
 }
 
-void* ShipCamera::mouseMove(void* args, int x, int y)
+void ShipCamera::mouseMove(int x, int y)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-	// console << x << " " << y << newline;
-
-	return NULL;
+	
 }
-void* ShipCamera::mouseDown(void* args, double interval, int x, int y)
+void ShipCamera::mouseDown(double interval, int x, int y)
 {
-	ShipCamera* camera = (ShipCamera*)args;
 	console << x << " " << y << " for " << interval << newline;
-
-	return NULL;
 }
-void* ShipCamera::mouseClick(void* args, int x, int y)
+void ShipCamera::mouseClick(int x, int y)
 {
-	ShipCamera* camera = (ShipCamera*)args;
-
-	Ship* object = (Ship*)camera->getObjectAt(x, y);
+	Ship* object = (Ship*)getObjectAt(x, y);
 	if(object != 0x0)
 	{
-		camera->selected = object;
+		selected = object;
 		object->switchSelect();
 	}
 	else
 	{
-		camera->selected = 0x0;
+		selected = 0x0;
 	}
-
-	return NULL;
 }
 

@@ -22,22 +22,22 @@ public:
 
 	virtual void setEventHandlers(Input* input);
 
-	static void* moveLeft(void* args, double interval);
-	static void* moveRight(void* args, double interval);
-	static void* moveUp(void* args, double interval);
-	static void* moveDown(void* args, double interval);
+	void moveLeft(double interval);
+	void moveRight(double interval);
+	void moveUp(double interval);
+	void moveDown(double interval);
 
-	static void* rotateLeft(void* args, double interval);
-	static void* rotateRight(void* args, double interval);
-	static void* rotateUp(void* args, double interval);
-	static void* rotateDown(void* args, double interval);
+	void rotateLeft(double interval);
+	void rotateRight(double interval);
+	void rotateUp(double interval);
+	void rotateDown(double interval);
 
-	static void* moveIn(void* args, double interval);
-	static void* moveOut(void* args, double interval);
+	void moveIn(double interval);
+	void moveOut(double interval);
 
-	static void* mouseMove(void* args, int x, int y);
-	static void* mouseDown(void* args, double interval, int x, int y);
-	static void* mouseClick(void* args, int x, int y);
+	void mouseMove(int x, int y);
+	void mouseDown(double interval, int x, int y);
+	void mouseClick(int x, int y);
 private:
 	Ship* selected;
 };
