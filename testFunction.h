@@ -123,4 +123,44 @@ void testFunction()
 	console << "Member explicit cast: " << function2(10) << newline;
 }
 
+class multi_function
+{
+public:
+	int operator()(int x, int y)
+	{
+		return x * y;
+	}
+};
+
+int multi_function2(int x, int y)
+{
+	return x * y + 2;
+}
+
+class testClass2
+{
+public:
+	int function(int x, int y)
+	{
+		return x * y - 2;
+	}
+};
+
+void testFunction2()
+{
+	Function<int, int, int> func = multi_function2;
+	console << "Multiple paramater2: " << func(5, 2) << newline;
+	
+	func = multi_function();
+	console << "Multiple paramter3: " << func(2, 3) << newline;
+	
+	testClass2 obj;
+	MemberFunction<testClass2, int, int, int> func2(&obj);
+	func2 = &testClass2::function;
+	console << "Multiple Member Param: " << func2(10, 2) << newline;
+	
+	func = (Function<int, int, int>)func2;
+	console << "Multiple Member Cast: " << func(10, 3) << newline;
+}
+
 #endif
