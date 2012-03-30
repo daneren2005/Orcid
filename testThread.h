@@ -3,27 +3,56 @@
 
 #include "ThreadManager.h"
 #include "ThreadLoop.h"
+#include "Thread.h"
 
 void nothing(ThreadLoop*)
 {
 
 }
 
-void SampleThread(ThreadLoop* arg)
+void SampleThreadLoop(ThreadLoop* arg)
 {
 	console << "Ticks per second: " << arg->getTicksPerSecond() << newline;
 }
 void sampleJob(GenericType arg)
 {
-	Sleep(rand() % 20 * 100);
+	usleep(rand() % 20 * 100000);
 	console << "Job Done" << newline;
 	*((int*)arg) = *((int*)arg) + 1;
 }
 
+void sampleShortThread()
+{
+	for(int i = 0; i < 3; i++)
+	{
+		console << i << newline;
+		usleep(rand() % 20 * 100000);
+	}
+}
+void sampleArgsThread(int i, int j, double k, char c)
+{
+	usleep(rand() % 20 * 200000);
+	console << i << " " << j << " " << k << " " << c << newline;
+}
+
+void testThread2(Thread& thread)
+{
+	// Test copy/deleting while thread still running
+	Thread thread2 = thread;
+	Thread thread3;
+	thread3 = thread;
+}
 void testThread()
 {
+	Thread thread(sampleShortThread);
+	testThread2(thread);
+	thread.join();
+}
+
+void testThreadLoop()
+{
 	ThreadLoop thread;
-	thread.start(SampleThread, 5);
+	thread.start(SampleThreadLoop, 5);
 	// thread.setTicksPerSecond(10);
 	thread.setTimeBetweenTicks(2);
 	
