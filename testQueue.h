@@ -3,9 +3,9 @@
 
 #include "Console.h"
 #include "Queue.h"
-#include "Thread.h"
+#include "ThreadLoop.h"
 
-void addQueue(Thread* thread)
+void addQueue(ThreadLoop* thread)
 {
 	((Queue<int>*)(thread->getArg()))->insert(25);
 }
@@ -37,7 +37,7 @@ void testQueue()
 	Queue<int> queue2; // = queue;
 	queue2 = queue;
 
-	Thread thread;
+	ThreadLoop thread;
 	thread.setTicksPerSecond(1);
 	thread.start(addQueue, (void*)&queue2);
 	console << "started loop" << newline;

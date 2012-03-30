@@ -2,14 +2,14 @@
 #define	_TEST_THREAD_H
 
 #include "ThreadManager.h"
-#include "Thread.h"
+#include "ThreadLoop.h"
 
-void nothing(Thread*)
+void nothing(ThreadLoop*)
 {
 
 }
 
-void SampleThread(Thread* arg)
+void SampleThread(ThreadLoop* arg)
 {
 	console << "Ticks per second: " << arg->getTicksPerSecond() << newline;
 }
@@ -22,12 +22,12 @@ void sampleJob(GenericType arg)
 
 void testThread()
 {
-	Thread thread;
+	ThreadLoop thread;
 	thread.start(SampleThread, 5);
 	// thread.setTicksPerSecond(10);
 	thread.setTimeBetweenTicks(2);
 	
-	Thread main;
+	ThreadLoop main;
 	main.setTicksPerSecond(1);
 	main.startMain(nothing, 0);
 }
