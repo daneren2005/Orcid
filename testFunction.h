@@ -1,6 +1,7 @@
 #ifndef _TEST_FUNCTION_H
 #define	_TEST_FUNCTION_H
 
+#include "FunctionCall.h"
 #include "Function.h"
 #include "MemberFunction.h"
 
@@ -34,6 +35,10 @@ public:
 	{
 		return x / 2 + 1;
 	}
+	void output(int x)
+	{
+		console << x << newline;
+	}
 };
 
 void output(int r)
@@ -43,6 +48,11 @@ void output(int r)
 void outputCast(long x)
 {
 	console << "Function cast: " << x << newline;
+}
+
+void outputNothing()
+{
+	console << "Nothing" << newline;
 }
 
 void testFunction()
@@ -123,44 +133,18 @@ void testFunction()
 	console << "Member explicit cast: " << function2(10) << newline;
 }
 
-class multi_function
+void testFunctionCall()
 {
-public:
-	int operator()(int x, int y)
-	{
-		return x * y;
-	}
-};
+	FunctionCall call(outputNothing);
+	call.execute();
 
-int multi_function2(int x, int y)
-{
-	return x * y + 2;
-}
+	Function<void, int> func = output;
+	FunctionCall call2(func, 4);
+	call2.execute();
 
-class testClass2
-{
-public:
-	int function(int x, int y)
-	{
-		return x * y - 2;
-	}
-};
-
-void testFunction2()
-{
-	Function<int, int, int> func = multi_function2;
-	console << "Multiple paramater2: " << func(5, 2) << newline;
-	
-	func = multi_function();
-	console << "Multiple paramter3: " << func(2, 3) << newline;
-	
-	testClass2 obj;
-	MemberFunction<testClass2, int, int, int> func2(&obj);
-	func2 = &testClass2::function;
-	console << "Multiple Member Param: " << func2(10, 2) << newline;
-	
-	func = (Function<int, int, int>)func2;
-	console << "Multiple Member Cast: " << func(10, 3) << newline;
+	testClass t;
+	FunctionCall call3(MemberFunction<testClass, void, int>(&testClass::output, &t), 10);
+	call3.execute(); 
 }
 
 #endif
