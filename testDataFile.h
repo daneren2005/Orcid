@@ -18,6 +18,18 @@ void writeDataFile()
 	DataFile::Object* obj3 = new DataFile::Object("Ship3");
 	obj3->strings.insert("data/Daedalus.3ds", "model");
 	obj3->floats.insert(3.0f, "offset");
+	
+	DataFile::Object* obj4 = new DataFile::Object("Ship4");
+	obj4->strings.insert("data/Cobra fighter/cobra fighter.obj", "model");
+	obj4->floats.insert(3.0f, "offset");
+	
+	DataFile::Object* obj5 = new DataFile::Object("Ship5");
+	obj5->strings.insert("data/Ghoul - fighter/GhoulOBJ.obj", "model");
+	obj5->floats.insert(3.0f, "offset");
+	
+	DataFile::Object* obj6 = new DataFile::Object("Ship6");
+	obj6->strings.insert("data/miranda1/start-miranda-class-bay.obj", "model");
+	obj6->floats.insert(3.0f, "offset");
 
 	DataFile::Object* item1 = new DataFile::Object("item1");
 	DataFile::Object* item2 = new DataFile::Object("item2");
@@ -31,6 +43,9 @@ void writeDataFile()
 	units.insertObject(obj);
 	units.insertObject(obj2);
 	units.insertObject(obj3);
+	units.insertObject(obj4);
+	units.insertObject(obj5);
+	units.insertObject(obj6);
 	units.save();
 	
 	DataFile world(String("data/sol_system.dat"));
