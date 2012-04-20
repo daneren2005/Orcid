@@ -17,11 +17,11 @@ RANLIB=ranlib
 CC=gcc.exe
 CCC=g++.exe
 CXX=g++.exe
-FC=gfortran
+FC=gfortran.exe
 AS=as.exe
 
 # Macros
-CND_PLATFORM=GNU-Windows
+CND_PLATFORM=MinGW-Windows
 CND_CONF=Release_Win32
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -57,13 +57,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../Skyfire/Lib -L/C/Windows/System32 ../Skyfire/dist/Release_Win32/GNU-Windows/libskyfire.a ../Skyfire/Lib/pthreadVCE2.dll
+LDLIBSOPTIONS=-L../Skyfire/Lib -L/C/Windows/System32 ../Skyfire/dist/Release_Win32/MinGW-Windows/libskyfire.a ../Skyfire/Lib/pthreadVCE2.dll
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/dist/Release_Win32/GNU-Windows/libskyfire.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/dist/Release_Win32/MinGW-Windows/libskyfire.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/Lib/pthreadVCE2.dll
 

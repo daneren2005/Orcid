@@ -17,11 +17,11 @@ RANLIB=ranlib
 CC=gcc.exe
 CCC=g++.exe
 CXX=g++.exe
-FC=gfortran
+FC=gfortran.exe
 AS=as.exe
 
 # Macros
-CND_PLATFORM=GNU-Windows
+CND_PLATFORM=MinGW-Windows
 CND_CONF=Debug_Win32
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -47,8 +47,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-std=gnu++0x
+CXXFLAGS=-std=gnu++0x
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -57,51 +57,55 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../Skyfire/Lib -L/C/Windows/System32 ../Skyfire/dist/Debug_Win32/GNU-Windows/libskyfire.a ../Skyfire/Lib/pthreadVCE2.dll
+LDLIBSOPTIONS=-L/C/Windows/System32 -L../Skyfire/Lib ../Skyfire/dist/Debug_Win32/MinGW-Windows/libskyfire.a ../Skyfire/Lib/pthreadVCE2.dll ../Skyfire/Lib/libturbojpeg.a ../Skyfire/Lib/libjpeg.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/dist/Debug_Win32/GNU-Windows/libskyfire.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/dist/Debug_Win32/MinGW-Windows/libskyfire.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/Lib/pthreadVCE2.dll
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/Lib/libturbojpeg.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ../Skyfire/Lib/libjpeg.a
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -static-libgcc -static-libstdc++ --enable-stdcall-fixup -lpthread -lopengl32 -lGLU32 -lSDL -lGdi32 -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -static-libgcc -static-libstdc++ -lpthread -lopengl32 -lGLU32 -lGdi32 -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/orcid ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/Station.o: Station.cpp 
+${OBJECTDIR}/Station.o: nbproject/Makefile-${CND_CONF}.mk Station.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Station.o Station.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
-${OBJECTDIR}/Explosion.o: Explosion.cpp 
+${OBJECTDIR}/Explosion.o: nbproject/Makefile-${CND_CONF}.mk Explosion.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Explosion.o Explosion.cpp
 
-${OBJECTDIR}/SolarSystem.o: SolarSystem.cpp 
+${OBJECTDIR}/SolarSystem.o: nbproject/Makefile-${CND_CONF}.mk SolarSystem.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/SolarSystem.o SolarSystem.cpp
 
-${OBJECTDIR}/Ship.o: Ship.cpp 
+${OBJECTDIR}/Ship.o: nbproject/Makefile-${CND_CONF}.mk Ship.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Ship.o Ship.cpp
 
-${OBJECTDIR}/ShipCamera.o: ShipCamera.cpp 
+${OBJECTDIR}/ShipCamera.o: nbproject/Makefile-${CND_CONF}.mk ShipCamera.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/ShipCamera.o ShipCamera.cpp
 
-${OBJECTDIR}/Galaxy.o: Galaxy.cpp 
+${OBJECTDIR}/Galaxy.o: nbproject/Makefile-${CND_CONF}.mk Galaxy.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -I../Skyfire -I../Skyfire/Include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Galaxy.o Galaxy.cpp

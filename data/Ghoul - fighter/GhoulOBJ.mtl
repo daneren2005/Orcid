@@ -12,5 +12,5 @@ newmtl _GhoulOBJ_GhoulOBJfull_texture
 	Kd 0.584314 0.584314 0.584314
 	Ks 0.000000 0.000000 0.000000
 	Ke 0.000000 0.000000 0.000000
-	map_Ka ghoul texture\ghoul_map_tga.tga
-	map_Kd ghoul texture\ghoul_map_tga.tga
+	map_Kd ghoul texture\ghoul_map_jpg.jpg
+	map_Ka ghoul texture\ghoul_map_jpg.jpg

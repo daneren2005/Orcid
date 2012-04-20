@@ -12,5 +12,5 @@ newmtl _tarrfighter_tarrfighterwire_177148026
 	Kd 0.694118 0.580392 0.101961
 	Ks 0.000000 0.000000 0.000000
 	Ke 0.000000 0.000000 0.000000
-	map_Ka fighter texture\fighter texture.tga
-	map_Kd fighter texture\fighter texture.tga
+	map_Kd fighter texture\fighter texture_jpg.jpg
+	map_Ka fighter texture\fighter texture_jpg.jpg
