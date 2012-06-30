@@ -21,6 +21,7 @@ void writeDataFile()
 	
 	DataFile::Object* obj4 = new DataFile::Object("Ship4");
 	obj4->strings.insert("data/Cobra fighter/cobra fighter.obj", "model");
+	obj4->floats.insert(0.25f, "scale");
 	obj4->floats.insert(3.0f, "offset");
 	
 	DataFile::Object* obj5 = new DataFile::Object("Ship5");

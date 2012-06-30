@@ -43,6 +43,8 @@ void Ship::update(double interval)
 void Ship::load(DataFile::Object* unit, DataFile::Object* instance)
 {
 	model = resourceManager.getModel(unit->name);
+	float scale = unit->floats.search("scale");
+	this->scale = Vector(scale, scale, scale);
 	this->position[0] = instance->floats.search("x");
 	this->position[1] = instance->floats.search("y");
 	this->position[2] = instance->floats.search("z");
