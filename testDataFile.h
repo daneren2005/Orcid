@@ -9,14 +9,17 @@ void writeDataFile()
 	
 	DataFile::Object* obj = new DataFile::Object("Ship1");
 	obj->strings.insert("data/Danube/danube.obj", "model");
+	obj->floats.insert(0.25f, "scale");
 	obj->floats.insert(1.0f, "offset");
 	
 	DataFile::Object* obj2 = new DataFile::Object("Ship2");
 	obj2->strings.insert("data/Daedalus.obj", "model");
+	obj2->floats.insert(0.25f, "scale");
 	obj2->floats.insert(2.0f, "offset");
 	
 	DataFile::Object* obj3 = new DataFile::Object("Ship3");
 	obj3->strings.insert("data/Daedalus.3ds", "model");
+	obj3->floats.insert(0.25f, "scale");
 	obj3->floats.insert(3.0f, "offset");
 	
 	DataFile::Object* obj4 = new DataFile::Object("Ship4");
@@ -26,10 +29,12 @@ void writeDataFile()
 	
 	DataFile::Object* obj5 = new DataFile::Object("Ship5");
 	obj5->strings.insert("data/Ghoul - fighter/GhoulOBJ.obj", "model");
+	obj5->floats.insert(0.25f, "scale");
 	obj5->floats.insert(3.0f, "offset");
 	
 	DataFile::Object* obj6 = new DataFile::Object("Ship6");
 	obj6->strings.insert("data/miranda1/start-miranda-class-bay.obj", "model");
+	obj6->floats.insert(0.25f, "scale");
 	obj6->floats.insert(3.0f, "offset");
 
 	DataFile::Object* item1 = new DataFile::Object("item1");
